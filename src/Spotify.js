@@ -48,14 +48,14 @@ function Spotify() {
 
 return (
   <div>
-      <h1>Spotify App</h1>
+      <h2>イメージソング</h2>
       <div>
         <input
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <button onClick={handleSearch}>Search</button>
+        <button onClick={handleSearch}>探す</button>
       </div>
       <h2>Search Results:</h2>
       <ul>
