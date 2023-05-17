@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
 function Spotify() {
   const [token, setToken] = useState('')
@@ -60,7 +60,16 @@ return (
       <h2>Search Results:</h2>
       <ul>
         {result.map((item) => (
-          <li key={item.id}>{item.name}</li>
+          <li key={item.id}>
+            <iframe title="Spotify"
+              style={{ borderRadius: '12px' }}
+              src={`https://open.spotify.com/embed/track/${item.id}`}
+              width="30%"
+              height="300px"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </li>
         ))}
       </ul>
     </div>
