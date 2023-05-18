@@ -6,6 +6,7 @@ function Spotify() {
   const [token, setToken] = useState('')
   const [search, setSearch] = useState('')
   const [result, setResult] = useState([])
+  const [selectedTrackID, setSelectedTrackID] = useState('')
 
   useEffect(() => {
     const fetchToken = async () => {
@@ -47,9 +48,13 @@ function Spotify() {
     }
   };
 
+  const handleRadioChange = (e) => {
+    setSelectedTrackID(e.target.value);
+  };
+
 return (
   <div>
-      <div className="instruction">イメージソングを検索してください</div>
+      <div className="text-gray-700">②イメージソングを検索してください</div>
       <div>
         <input
           type="text"
@@ -61,20 +66,34 @@ return (
         </button>
       </div>
       <h2>Search Results:</h2>
-      <ul>
+      <div>
         {result.map((item) => (
-          <li key={item.id}>
-            <iframe title="Spotify"
-              style={{ borderRadius: '12px' }}
-              src={`https://open.spotify.com/embed/track/${item.id}`}
-              width="30%"
-              height="300px"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            ></iframe>
-          </li>
+          <div key={item.id}>
+            <div class="flex items-center mb-4">
+              <input
+                id={item.id}
+                type="radio"
+                value={item.id}
+                name="default-radio"
+                class="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 dark:bg-gray-700 dark:border-gray-600"
+                checked={item.id === selectedTrackID}
+                onChange={handleRadioChange}
+                />
+              <iframe title="Spotify"
+                style={{ borderRadius: '12px' }}
+                src={`https://open.spotify.com/embed/track/${item.id}`}
+                width="30%"
+                height="300px"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div>
+              Selected Track: {selectedTrackID}
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
