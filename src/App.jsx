@@ -19,8 +19,8 @@ function App() {
   return (
   <div className="container px-5 py-24 text-center bg-gradient-to-r from-yellow-400 via-gray-50 to-teal-300 mx-auto">
     <h1 className='text-3xl font-bold underline text-gray-800 p-6'>推しキャラ✖️イメソン</h1>
-    <p className='pt-2 pb-6'>推しキャラの名前: {oshiName}</p>
-    <div>イメージソング:
+    <div>
+      <div className='text-xl text-blue-600 flex-initial'>イメージソング:</div>
       <iframe title="Spotify"
               style={{ borderRadius: '12px' }}
               src={`https://open.spotify.com/embed/track/${selectedTrack}`}
@@ -28,8 +28,9 @@ function App() {
               height="300px"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
-              className='position: items-center'
+              className='mx-auto justify-cente mb-6'
       />
+      <p className='pt-2 pb-3 text-xl text-blue-600'>わたしの推しキャラクター: {oshiName}</p>
     </div>
     <div className='text-gray-700'>
       ①推しキャラの名前を入力してください
