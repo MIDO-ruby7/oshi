@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from 'react';
-import './Spotify.css';
 
 function Spotify() {
   const [token, setToken] = useState('')
@@ -66,33 +65,35 @@ return (
         </button>
       </div>
       <h2>Search Results:</h2>
+      <div class="">
+        <div class="">
+          {result.map((item) => (
+            <div key={item.id}>
+              <div class="flex items-center">
+                <input
+                  id={item.id}
+                  type="radio"
+                  value={item.id}
+                  name="default-radio"
+                  class="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 dark:bg-gray-700 dark:border-gray-600"
+                  checked={item.id === selectedTrackID}
+                  onChange={handleRadioChange}
+                  />
+                <iframe title="Spotify"
+                  style={{ borderRadius: '12px' }}
+                  src={`https://open.spotify.com/embed/track/${item.id}`}
+                  width="30%"
+                  height="300px"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
       <div>
-        {result.map((item) => (
-          <div key={item.id}>
-            <div class="flex items-center mb-4">
-              <input
-                id={item.id}
-                type="radio"
-                value={item.id}
-                name="default-radio"
-                class="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 dark:bg-gray-700 dark:border-gray-600"
-                checked={item.id === selectedTrackID}
-                onChange={handleRadioChange}
-                />
-              <iframe title="Spotify"
-                style={{ borderRadius: '12px' }}
-                src={`https://open.spotify.com/embed/track/${item.id}`}
-                width="30%"
-                height="300px"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-              ></iframe>
-            </div>
-            <div>
-              Selected Track: {selectedTrackID}
-            </div>
-          </div>
-        ))}
+        Selected Track: {selectedTrackID}
       </div>
     </div>
   );

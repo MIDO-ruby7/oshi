@@ -9,9 +9,10 @@ function App() {
     setOshiName(name);
     console.log(name);
   }
+  
 
   return (
-  <div className="container">
+  <div className="container px-5 py-24 text-center bg-gradient-to-r from-yellow-400 via-gray-50 to-teal-300 mx-auto">
     <h1 className='text-3xl font-bold underline text-gray-800 p-6'>推しキャラ✖️イメソン</h1>
     <div className='text-gray-700'>
       ①推しキャラの名前を入力してください
