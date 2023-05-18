@@ -49,14 +49,16 @@ function Spotify() {
 
 return (
   <div>
-      <h2>イメージソング</h2>
+      <div className="instruction">イメージソングを検索してください</div>
       <div>
         <input
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <button onClick={handleSearch}>探す</button>
+        <button onClick={handleSearch} type="submit" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+          探す
+        </button>
       </div>
       <h2>Search Results:</h2>
       <ul>

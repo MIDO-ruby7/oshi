@@ -12,9 +12,9 @@ function App() {
 
   return (
   <div className="container">
-    <h1>推しキャラ✖️イメソン</h1>
-    <div>
-      推しキャラの名前を入力してください
+    <h1 className='text-3xl font-bold underline'>推しキャラ✖️イメソン</h1>
+    <div className='instruction'>
+      ①推しキャラの名前を入力してください
     </div>
     <Form handleOshiNameChange={handleOshiNameChange} />
     <p>推しキャラの名前: {oshiName}</p>
