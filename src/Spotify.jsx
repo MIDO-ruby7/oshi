@@ -61,6 +61,7 @@ return (
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        className="bg-white rounded border border-gray-100 focus:ring-2 focus:ring-blue-500  focus:border-blue-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
       />
       <button onClick={handleSearch} type="submit" className="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
         探す
@@ -71,20 +72,21 @@ return (
       <div>
         {result.map((item) => (
           <div key={item.id}>
-            <div className="flex items-center">
+            <div className="flex justify-center">
               <input
                 id={item.id}
                 type="radio"
                 value={item.id}
                 name="default-radio"
-                className="w-6 h-6 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-1"
+                className="w-6 h-6 text-blue-600 bg-gray-100 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                aria-labelledby="country-option-1"
                 checked={item.id === selectedTrackID}
                 onChange={handleRadioChange}
                 />
               <iframe title="Spotify"
                 style={{ borderRadius: '12px' }}
                 src={`https://open.spotify.com/embed/track/${item.id}`}
-                width="30%"
+                width="70%"
                 height="300px"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
@@ -93,9 +95,6 @@ return (
           </div>
         ))}
       </div>
-    </div>
-    <div>
-      Selected Track: {selectedTrackID}
     </div>
   </div>
   );
