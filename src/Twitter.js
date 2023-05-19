@@ -3,7 +3,7 @@ import { TwitterIcon, TwitterShareButton } from 'react-share';
 
 const ShareButton = ({ selectedTrack, oshiName }) => {
   const URL = `https://open.spotify.com/embed/track/${selectedTrack}`;
-  const QUOTE = `私の推しキャラ【${oshiName}】のいめーじソングはこれだ！`;
+  const QUOTE = `私の推しキャラ【${oshiName}】のいめーじソングはこれだ！ https://oshi-ten.vercel.app/ #推しキャライメソン`;
 
   return (
     <div>
