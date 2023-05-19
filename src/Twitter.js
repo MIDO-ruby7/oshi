@@ -9,8 +9,8 @@ const ShareButton = ({ selectedTrack, oshiName }) => {
     <div>
       <TwitterShareButton url={URL} title={QUOTE}>
         <TwitterIcon size={40} round />
-        <p>シェアする</p>
       </TwitterShareButton>
+      <p>シェアする</p>
     </div>
   );
 }
