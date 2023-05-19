@@ -1,13 +1,18 @@
+import React from 'react'
 import { TwitterIcon, TwitterShareButton } from 'react-share';
-const URL = 'https://www.youtube.com/watch?v=7sDY4m8KNLc';
-const QUOTE = 'This is a test';
 
-const TwitterShare = (props) => {
+const ShareButton = ({ selectedTrack, oshiName }) => {
+  const URL = `https://open.spotify.com/embed/track/${selectedTrack}`;
+  const QUOTE = `私の推しキャラ【${oshiName}】のいめーじソングはこれだ！`;
+
   return (
     <div>
       <TwitterShareButton url={URL} title={QUOTE}>
-        <TwitterIcon size={24} round />
+        <TwitterIcon size={40} round />
+        <p>シェアする</p>
       </TwitterShareButton>
     </div>
   );
 }
+
+export default ShareButton;

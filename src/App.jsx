@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Form from './Form';
 import Spotify from './Spotify';
+import Twitter from './Twitter';
 
 function App() {
   const [oshiName, setOshiName] = useState('')
@@ -34,6 +35,7 @@ function App() {
               loading="lazy"
               className='mx-auto justify-cente'
       />
+      <Twitter selectedTrack={selectedTrack} oshiName={oshiName}  />
     </div>
     <div className='text-gray-700'>
       ①推しキャラの名前を入力してください
