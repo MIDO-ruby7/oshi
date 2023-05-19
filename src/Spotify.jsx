@@ -67,7 +67,7 @@ return (
         探す
       </button>
     </div>
-    <h2>Search Results:</h2>
+    <h2>③該当の曲を選択してください</h2>
     <div>
       <div>
         {result.map((item) => (
