@@ -65,7 +65,7 @@ return (
         探す
       </button>
     </div>
-    <h2 className="mb-4 mt-4 text-gray-600 font-semibold">③該当の曲を選択して、シェアしよう！</h2>
+    <h2 className="mb-4 mt-4 text-gray-600 font-semibold">③該当の曲を選択してシェアしよう！</h2>
     <div>
       <div>
         {result.map((item) => (

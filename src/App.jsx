@@ -26,7 +26,7 @@ function App() {
       ①推しキャラの名前を入力してください
     </div>
     <Form handleOshiNameChange={handleOshiNameChange} />
-    <div className='text-gray-600 font-semibold'>②下の検索バーから、イメージソングを検索してください</div>
+    <div className='text-gray-600 font-semibold'>②下でイメージソングを検索してください</div>
     <div className='p-6 bg-amber-50 bg-opacity-20 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
       <p className='pt-2 text-md text-teal-600 font-semibold dark:text-white '>
           わたしの推しキャラクター:
