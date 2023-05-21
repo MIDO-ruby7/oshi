@@ -76,7 +76,7 @@ return (
               <input
                 id={item.id}
                 type="radio"
-                value="{item.id}"
+                value={item.id}
                 name="radio"
                 className="radio"
                 checked={item.id === selectedTrackID}
