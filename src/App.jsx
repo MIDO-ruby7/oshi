@@ -20,15 +20,17 @@ function App() {
 
   return (
   <div className="container px-5 py-24 text-center bg-gradient-to-r from-yellow-400 via-gray-50 to-teal-300 mx-auto ">
-    <h1 className='text-3xl font-bold underline text-gray-700 p-6 font-train'>推しキャラ×イメソン</h1>
+    <h1 className='text-2xl font-bold underline text-gray-700 m-2 font-train'>推しキャラ×イメソン</h1>
+    <h2 className='font-semibold text-gray-600'>推しキャラから連想する</h2>
+    <h2 className='font-semibold text-gray-600 mb-6'>イメージソングをみんなにシェアしよう！</h2>
     <h2 className='font-semibold text-gray-600'>＜使い方＞</h2>
-    <div className='text-gray-600 font-semibold'>
+    <div className='text-gray-700 font-semibold'>
       ①推しキャラの名前を入力してください
     </div>
     <Form handleOshiNameChange={handleOshiNameChange} />
     <div className='text-gray-600 font-semibold'>②下でイメージソングを検索してください</div>
     <div className='p-6 bg-amber-50 bg-opacity-20 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
-      <p className='pt-2 text-md text-teal-600 font-semibold dark:text-white '>
+      <p className='pt-2 text-md text-teal-600 font-semibold dark:text-white'>
           わたしの推しキャラクター:
       </p>
       <p className='font-semibold pb-3 text-lg text-gray-800'>{oshiName}</p>

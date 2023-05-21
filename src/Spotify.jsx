@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from 'react';
+// App.cssの読み込み
+import './App.css';
 
 function Spotify({ selectedTrack, onSelectedTrackIDChange }) {
   const [token, setToken] = useState('')
@@ -62,22 +64,21 @@ return (
         placeholder="曲名、アーティスト名"
       />
       <button onClick={handleSearch} type="submit" className="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-        探す
+        検索
       </button>
     </div>
-    <h2 className="mb-4 mt-4 text-gray-600 font-semibold">③該当の曲を選択してシェアしよう！</h2>
-    <div>
-      <div>
+    <h2 className="mb-4 mt-4 text-gray-700 font-semibold">③該当の曲を選択してシェアしよう！</h2>
+    <div className="">
+      <div className="text-gray-700">
         {result.map((item) => (
           <div key={item.id}>
             <div className="flex justify-center">
               <input
                 id={item.id}
                 type="radio"
-                value={item.id}
-                name="default-radio"
-                className="w-6 h-6 text-blue-600 bg-gray-100 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                aria-labelledby="country-option-1"
+                value="{item.id}"
+                name="radio"
+                className="radio"
                 checked={item.id === selectedTrackID}
                 onChange={handleRadioChange}
                 />
