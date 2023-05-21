@@ -1,5 +1,6 @@
 /* ラジオボタンのスタイル */
 .radio {
+  -webkit-appearance: none;
   appearance: none;
   display: inline-block;
   width: 18px;
@@ -14,8 +15,8 @@
 
 /* ラジオボタンが選択されている場合のスタイル */
 .radio:checked {
-  background-color: bule;
-  border-color: bule;
+  background-color: blue;
+  border-color: blue;
 }
 
 /* ラジオボタンにフォーカスがある場合のスタイル */
