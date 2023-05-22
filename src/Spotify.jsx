@@ -48,8 +48,8 @@ function Spotify({ selectedTrack, onSelectedTrackIDChange }) {
     }
   };
 
-  const handleRadioChange = (e) => {
-    onSelectedTrackIDChange(e.target.value);
+  const handleRadioChange = (id) => {
+    onSelectedTrackIDChange(id);
   };
 
 return (
@@ -74,12 +74,13 @@ return (
             <div className="flex justify-center">
               <input
                 id={item.id}
-                type="radio"
+                type="button"
                 value={item.id}
                 name="button"
-                class="text-cyan-400 bg-cyan-400 hover:bg-cyan-500 hover:text-cyan-500 focus:outline-none focus:ring-8 focus:ring-rose-400 font-medium rounded-full text-sm text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-6 h-6"
-                checked={item.id === selectedTrackID}
-                onChange={handleRadioChange}
+                className={`text-cyan-400 bg-cyan-400 hover:bg-cyan-500 hover:text-cyan-500 focus:outline-none focus:ring-8 focus:ring-pink-400 rounded-full text-sm w-6 h-6 mr-4 ${
+                  item.id === selectedTrackID ? 'bg-lime-500 text-lime-500' : ''
+                }`}
+                onClick={() => handleRadioChange(item.id)}
                 />
               <iframe title="Spotify"
                 style={{ borderRadius: '12px' }}

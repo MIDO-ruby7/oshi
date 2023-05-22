@@ -7,16 +7,16 @@ import Twitter from './Twitter';
 
 function App() {
   const [oshiName, setOshiName] = useState('')
-  const [selectedTrack, setSelectedTrack] = useState('')
+  const [selectedTrack, setSelectedTrack] = useState(null)
 
   const handleOshiNameChange = (name) => {
     setOshiName(name);
   }
 
-  const handSelectedTrackIDChange = (trackId) => {
-    setSelectedTrack(trackId);
-    console.log(trackId)
-  }
+  // const handSelectedTrackIDChange = (trackId) => {
+  //   setSelectedTrack(trackId);
+  //   console.log(trackId)
+  // }
 
   return (
   <div className="container px-5 py-24 text-center bg-gradient-to-r from-yellow-400 via-gray-50 to-teal-300 mx-auto ">
