@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from 'react';
 // App.cssの読み込み
-import './App.css';
 
 function Spotify({ selectedTrack, onSelectedTrackIDChange }) {
   const [token, setToken] = useState('')
@@ -69,7 +68,7 @@ return (
     </div>
     <h2 className="mb-4 mt-4 text-gray-700 font-semibold">③該当の曲を選択してシェアしよう！</h2>
     <div className="">
-      <div className="text-gray-700">
+      <div>
         {result.map((item) => (
           <div key={item.id}>
             <div className="flex justify-center">
@@ -77,8 +76,8 @@ return (
                 id={item.id}
                 type="radio"
                 value={item.id}
-                name="radio"
-                className="radio"
+                name="button"
+                class="text-cyan-400 bg-cyan-400 hover:bg-cyan-500 hover:text-cyan-500 focus:outline-none focus:ring-8 focus:ring-rose-400 font-medium rounded-full text-sm text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-6 h-6"
                 checked={item.id === selectedTrackID}
                 onChange={handleRadioChange}
                 />
@@ -91,6 +90,7 @@ return (
                 loading="lazy"
               ></iframe>
             </div>
+            <p>{selectedTrackID}</p>
           </div>
         ))}
       </div>
